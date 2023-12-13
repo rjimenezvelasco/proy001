@@ -1,0 +1,29 @@
+<div class="flexbox-parent">
+    <div class="center">
+
+    <form class="example-form" [formGroup]="formulario" (ngSubmit)="onSubmit(formulario)">
+    <mat-form-field class="example-full-width">
+      <mat-label>Name </mat-label>
+      <input matInput formControlName="name" required>
+      <div *ngIf="formulario.get('name')?.errors?.['required']">
+        Escriba el nombre.
+      </div>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Email </mat-label>
+      <input matInput formControlName="email" required>
+      <div *ngIf="formulario.get('email')?.errors?.['required']">
+        Escriba el email.
+      </div>
+    </mat-form-field>
+  
+    
+
+    <button mat-raised-button color="primary" type="submit">
+        Save
+    </button>
+    </form>
+    </div>
+ </div>
+  
